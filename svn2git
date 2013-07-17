@@ -1,0 +1,21 @@
+#!/bin/sh
+
+# Automate versioning from SVN to Git.
+#
+# This script may be useful if you use
+# When doing `svn up`, if files versionned by Git are deleted,
+# we have to manually remove them for the Git repo.
+# This script tries to automate the process.
+# And is also the occasion to learn basic BASH programming.
+
+# Add all new and modified files.
+git add .
+
+# Remove files deleted by SVN.
+git rm $(git ls-files --deleted)
+
+# Retrieve SVN revision for commit message
+svnrev=`svn info | awk '/Revision:/ { print $2 }'`
+
+# Commit !
+git commit -m "SVN Update, revision $svnrev"
