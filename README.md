@@ -6,13 +6,11 @@ Purpose
 
 Automate versioning from SVN to Git. For lazy people.
 
-This script may be useful if you use to share code but use git locally to version your files. This small script is not related at all to git-svn.
+This script may be useful if you use SVN to share code but use git locally to version your files. This small script is not related at all to git-svn. It may prove useful when SVN and Git are used independently.
 
-When doing `svn up`, if files versionned by Git are deleted,
-we have to manually remove them for the Git repo.
-This script tries to automate the process.
+When doing `svn up`, if files versionned by Git are deleted, we have to manually remove them for the Git repo. This script tries to automate the process.
 
-And is also the occasion to learn basic BASH programming.
+And it's also the occasion to learn basic BASH programming.
 
 How it works
 ------------
@@ -30,11 +28,11 @@ Usage
 
 1. Copy the script somewhere in your $PATH, like /usr/bin
 
-`sudo cp svn2git /usr/bin`
+`sudo cp svn2git /usr/bin` // sudo required for /usr/bin, YMMV
 
 2. Give execute permission to everyone
 
-`chmod a+x /usr/bin/svn2git`
+`chmod a+x /usr/bin/svn2git` // adapt path and permissions according to your wishes
 
 3. Ready to go ! Just type `svn2git`.
 
